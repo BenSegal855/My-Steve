@@ -5,7 +5,8 @@ export default Client.defaultGuildSchema
 		.add('memberlog', 'TextChannel')
 		.add('modlog', 'TextChannel')
 		.add('reminderChannel', 'TextChannel')
-		.add('serverlog', 'TextChannel'))
+		.add('serverlog', 'TextChannel')
+		.add('fax', 'TextChannel', { array: true }))
 	.add('roles', roles => roles
 		.add('administrator', 'Role')
 		.add('assignable', 'Role', { array: true })
@@ -22,4 +23,8 @@ export default Client.defaultGuildSchema
 	.add('maxMentions', 'Integer', { default: 25 })
 	.add('moderationCases', 'any', { array: true, configurable: false })
 	.add('snippets', 'any', { array: true })
-	.add('wordBlacklist', 'Boolean', { default: true });
+	.add('wordBlacklist', 'Boolean', { default: true })
+	.add('channelSuggestions', suggestion => suggestion
+		.add('limit', 'Integer', { default: 3 })
+		.add('pending', 'any', { array: true, configurable: false })
+	);

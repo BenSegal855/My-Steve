@@ -57,7 +57,7 @@ export default class extends Language {
 			// eslint-disable-next-line max-len
 			INHIBITOR_COOLDOWN: (remaining, guildCooldown): string => `${guildCooldown ? 'Someone has' : 'You have'} already used this command. You can use this command again in ${remaining} second${remaining === 1 ? '' : 's'}.`,
 			INHIBITOR_DISABLED_GUILD: 'This command has been disabled by an admin in this guild.',
-			INHIBITOR_DISABLED_GLOBAL: 'This command has been globally disabled by the bot owner.',
+			INHIBITOR_DISABLED_GLOBAL: 'Lol Ben couldn\'t be bothered to figure this one out.',
 			INHIBITOR_MISSING_BOT_PERMS: (missing): string => `Insufficient permissions, missing: **${missing}**`,
 			INHIBITOR_NSFW: 'You can only use NSFW commands in NSFW channels.',
 			INHIBITOR_PERMISSIONS: 'You do not have permission to use this command.',
@@ -141,7 +141,7 @@ export default class extends Language {
 			COMMAND_HELP_EXTENDED: 'Extended Help ::',
 			COMMAND_ENABLE: (type, name): string => `+ Successfully enabled ${type}: ${name}`,
 			COMMAND_ENABLE_DESCRIPTION: 'Re-enables or temporarily enables a command/inhibitor/monitor/finalizer. Default state restored on reboot.',
-			COMMAND_DISABLE: (type, name): string => `+ Successfully disabled ${type}: ${name}`,
+			COMMAND_DISABLE: (type, name): string => `- Successfully disabled ${type}: ${name}`,
 			COMMAND_DISABLE_DESCRIPTION: 'Re-disables or temporarily disables a command/inhibitor/monitor/finalizer/event. Default state restored on reboot.',
 			COMMAND_DISABLE_WARN: 'You probably don\'t want to disable that, since you wouldn\'t be able to run any command to enable it again',
 			COMMAND_CONF_NOKEY: 'You must provide a key',

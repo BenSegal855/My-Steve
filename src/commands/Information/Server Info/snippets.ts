@@ -9,6 +9,8 @@ export default class extends SteveCommand {
 	public constructor(store: CommandStore, file: string[], directory: string) {
 		super(store, file, directory, {
 			aliases: ['snippet', 'snip'],
+			//cooldown: 30,
+			//cooldownLevel: 'channel',
 			description: 'Easily access useful bits of information about the server.',
 			helpUsage: '<add|remove|list|edit|view> (snippetName) (snippetContent)',
 			examples: ['snippets rule1', 'snippet add|rule1|the word of the jonathans is law', 'snip remove|rule1'],
@@ -71,7 +73,7 @@ export default class extends SteveCommand {
 		const snips: Snippet[] = msg.guild.settings.get(GuildSettings.Snippets);
 		if (snips.length < 1) throw 'This server has no snippets to list.';
 
-		return msg.channel.send(`${snips.map(s => s.name).join('\n')}`);
+		return msg.channel.send(`${snips.map(s => s.name).sort().join('\n')}`);
 	}
 
 }

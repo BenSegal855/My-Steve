@@ -42,6 +42,7 @@ export default class extends SteveCommand {
 
 	public constructor(store: CommandStore, file: string[], directory: string) {
 		super(store, file, directory, {
+			aliases: ['perms'],
 			description: 'View the permissions of the specified member.',
 			helpUsage: 'member',
 			permissionLevel: PermissionLevels.MODERATOR,

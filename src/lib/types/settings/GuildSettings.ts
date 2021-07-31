@@ -16,6 +16,7 @@ export namespace GuildSettings {
 		export const Modlog = 'channels.modlog';
 		export const ReminderChannel = 'channels.reminderChannel';
 		export const Serverlog = 'channels.serverlog';
+		export const Fax = 'channels.fax'
 	}
 
 	export namespace Roles {
@@ -34,4 +35,10 @@ export namespace GuildSettings {
 		export const MaxEntries = 'music.maxEntries';
 		export const MaxLength = 'music.maxLength';
 	}
+
+	export namespace ChannelSuggestions {
+		export const Limit = 'channelSuggestions.limit';
+		export const Pending = 'channelSuggestions.pending';
+	}
+
 }

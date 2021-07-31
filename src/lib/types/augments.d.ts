@@ -1,9 +1,10 @@
 import { ScheduledTask } from 'klasa';
-import { Snowflake, Guild, GuildMember, UserResolvable, TextChannel } from 'discord.js';
+import { Snowflake, Guild, GuildMember, UserResolvable, TextChannel, Collection } from 'discord.js';
 import { Node as Lavalink, BaseNodeOptions } from 'lavalink';
 import { ModerationManager } from '@lib/structures/moderation/ModerationManager';
 import { MusicHandler } from '@lib/structures/music/MusicHandler';
 import { PomodoroManager } from '@lib/structures/PomodoroManager';
+import Counter from '@pm2/io/build/main/utils/metrics/counter';
 
 declare module 'discord.js' {
 	interface Guild {
@@ -38,6 +39,7 @@ declare module 'discord.js' {
 declare module 'klasa' {
 	interface KlasaClient {
 		lavalink: Lavalink | null;
+		counters: Collection<string, Counter>;
 	}
 
 	interface KlasaClientOptions {

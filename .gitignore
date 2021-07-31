@@ -108,3 +108,7 @@ config.ts
 
 # lavalink
 lavalink/application.yml
+config.ts~
+SteveErr.txt
+SteveOut.txt
+\#*\#

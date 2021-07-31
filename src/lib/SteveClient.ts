@@ -1,4 +1,6 @@
 import { KlasaClient, Colors, KlasaClientOptions } from 'klasa';
+import { Collection } from 'discord.js';
+import Counter from '@pm2/io/build/main/utils/metrics/counter';
 import permissionLevels from '@lib/setup/permissionLevels';
 import { Node as Lavalink } from 'lavalink';
 import { LAVALINK_ENABLE } from '@root/config';
@@ -12,6 +14,7 @@ import '@lib/schemas/user';
 export class SteveClient extends KlasaClient {
 
 	public lavalink: Lavalink | null;
+	public counters: Collection<string, Counter> = new Collection();
 
 	public constructor(options: KlasaClientOptions = {}) {
 		super(options);

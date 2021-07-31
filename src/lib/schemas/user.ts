@@ -9,4 +9,9 @@ export default Client.defaultUserSchema
 		.add('running', 'Boolean', { configurable: false, default: false })
 		.add('shortBreakTime', 'Integer', { default: 5 * Time.Minute })
 		.add('workRoundNumber', 'Integer', { configurable: false, default: 0 })
-		.add('workTime', 'Integer', { default: 25 * Time.Minute }));
+		.add('workTime', 'Integer', { default: 25 * Time.Minute }))
+	.add('fax', fax => fax
+		.add('number', 'string', { configurable: false })
+		.add('channel', 'TextChannel', {configurable: false })
+		.add('text', 'Color', { default: '#000000' })
+		.add('background', 'Color', { default: '#ffffff' }));

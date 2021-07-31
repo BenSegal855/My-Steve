@@ -31,7 +31,7 @@ export default class extends SteveCommand {
 			.setTimestamp();
 
 		return Promise.all([
-			msg.channel.send('Your feedback has been sent, thanks!'),
+			msg.channel.send('Your feedback has been sent, Ben has been notified!'),
 			feedbackChannel.send(embed)
 		]);
 	}

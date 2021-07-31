@@ -20,7 +20,7 @@ export default class extends SteveCommand {
 	public async run(msg: KlasaMessage, [search]: [string]): Promise<Message> {
 		const res = await msg.channel.send('Using mad Google skillz...');
 
-		const results = await googleIt({ query: search, limit: 5, disableConsole: true });
+		const results = await googleIt({ query: search, limit: 5, disableConsole: false });
 
 		const embed = newEmbed()
 			.setColor(Colors.GoogleYellow)

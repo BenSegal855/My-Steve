@@ -19,14 +19,31 @@ export default class extends Event {
 
 		const parent = msg.channel.parent ? msg.channel.parent.name : 'No Category';
 
+		const attachment = msg.attachments;
+
 		const embed = newEmbed()
 			.setAuthor(msg.author.tag, msg.author.displayAvatarURL())
 			.setColor(Colors.RedOrange)
 			.setFooter(`Message ID: ${msg.id} | Message sent ${msgSentTime} ago`)
 			.setTimestamp()
-			.addFields([
-				{ name: `Message Deleted in ${msg.channel.name} (${parent})`, value: msgContent }
-			]);
+			.setTitle(`Message Deleted in ${msg.channel.name} (${parent})`)
+			.setDescription(msg.content);
+
+		if (msg.edits.length > 1) {
+			const edits: string[] = [];
+			msg.edits.forEach(edit => {
+				edits.push(edit.content);
+			});
+			embed.addField('Edits', edits.join(', '));
+		}
+
+		if (attachment.array().length > 0) {
+			const files: string[] = [];
+			attachment.forEach(att => {
+				files.push(att.name);
+			});
+			embed.addField('Files', files.join(', '));
+		}
 
 		return serverlog.send(embed);
 	}

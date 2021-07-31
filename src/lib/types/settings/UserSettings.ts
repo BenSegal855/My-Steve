@@ -13,4 +13,11 @@ export namespace UserSettings {
 		export const WorkTime = 'pomodoro.workTime';
 	}
 
+	export namespace Fax {
+		export const Number = 'fax.number';
+		export const Channel = 'fax.channel';
+		export const Text = 'fax.text';
+		export const Background = 'fax.background'
+	}
+
 }

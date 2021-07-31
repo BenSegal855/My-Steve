@@ -8,6 +8,7 @@ export default class extends SteveCommand {
 
 	public constructor(store: CommandStore, file: string[], directory: string) {
 		super(store, file, directory, {
+			aliases: ['yeet'],
 			description: 'Locks a channel from public posting.',
 			examples: ['lock', 'lock 1 hour'],
 			permissionLevel: PermissionLevels.MODERATOR,

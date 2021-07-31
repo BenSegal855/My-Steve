@@ -9,7 +9,7 @@ export default class extends SteveCommand {
 
 	public constructor(store: CommandStore, file: string[], directory: string) {
 		super(store, file, directory, {
-			aliases: ['serverstats'],
+			aliases: ['serverstats','erverstats', 'erverinfo'],
 			description: 'Gives useful information about the server.',
 			examples: ['serverinfo'],
 			runIn: ['text']
@@ -17,6 +17,7 @@ export default class extends SteveCommand {
 	}
 
 	public async run(msg: KlasaMessage): Promise<Message> {
+		msg.guild.members.fetch();
 		const guildCreationDate = oneLine`Created ${formatDate(msg.guild.createdTimestamp)}
 			(${friendlyDuration(Date.now() - msg.guild.createdTimestamp)} ago)`;
 

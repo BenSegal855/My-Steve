@@ -4,7 +4,7 @@ import { Message } from 'discord.js';
 export default class extends Monitor {
 
 	public constructor(store: MonitorStore, file: string[], directory: string) {
-		super(store, file, directory, { allowedTypes: ['PINS_ADD'], ignoreOthers: false });
+		super(store, file, directory, { allowedTypes: ['PINS_ADD'], ignoreOthers: false, ignoreSelf: false, ignoreBots: false });
 	}
 
 	public async run(msg: KlasaMessage): Promise<Message> {

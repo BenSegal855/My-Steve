@@ -12,7 +12,7 @@ export default class extends SteveCommand {
 			description: 'Set personal reminders for yourself.',
 			examples: ['remind make steve suck less|1 hour'],
 			extendedHelp: 'If you set a reminder in a DM with Steve, he will remind you in the DM.',
-			usage: '<reminder:string{,140}> <duration:timespan>',
+			usage: '<reminder:string{,420}> <duration:timespan>',
 			helpUsage: 'what | when'
 		});
 	}
